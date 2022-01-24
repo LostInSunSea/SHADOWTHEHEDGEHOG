@@ -13,7 +13,7 @@ func _ready():
 	pass 
 	
 func _process(delta):
-	#animation_controller()
+	animation_controller()
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,15 +37,16 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 
 func animation_controller():
-	#pick direction animation is facing
-	if(velocity.x > 0):
+	# face left or right
+	if velocity.x > 0:
 		$AnimatedSprite.flip_h = false
-	elif(velocity.x < 0):
+	elif velocity.x < 0:
 		$AnimatedSprite.flip_h = true
-	#pick which animation gets played
-	if (velocity.y < 0):
-		$AnimatedSprite.play("jump")
-	elif(velocity.x != 0):
-		$AnimatedSprite.play("walk")
+	
+	if velocity.y < 0:
+		$AnimatedSprite.play("Jumping")
 	else:
-		$AniatedSprite.play("idle")
+		if velocity.x != 0:
+			$AnimatedSprite.play("Walking")
+		else:
+			$AnimatedSprite.play("Idle")
