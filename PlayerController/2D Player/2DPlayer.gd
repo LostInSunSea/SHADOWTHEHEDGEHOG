@@ -11,7 +11,10 @@ var velocity = Vector2.ZERO
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass 
-
+	
+func _process(delta):
+	#animation_controller()
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -32,3 +35,17 @@ func _physics_process(delta):
 	
 	#move player
 	velocity = move_and_slide(velocity, Vector2.UP)
+
+func animation_controller():
+	#pick direction animation is facing
+	if(velocity.x > 0):
+		$AnimatedSprite.flip_h = false
+	elif(velocity.x < 0):
+		$AnimatedSprite.flip_h = true
+	#pick which animation gets played
+	if (velocity.y < 0):
+		$AnimatedSprite.play("jump")
+	elif(velocity.x != 0):
+		$AnimatedSprite.play("walk")
+	else:
+		$AniatedSprite.play("idle")
