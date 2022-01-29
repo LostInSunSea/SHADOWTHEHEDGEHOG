@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/3d_models/picture.glb" type="PackedScene" id=1]
+
+[node name="3DPicture" type="KinematicBody"]
+
+[node name="picture" parent="." instance=ExtResource( 1 )]

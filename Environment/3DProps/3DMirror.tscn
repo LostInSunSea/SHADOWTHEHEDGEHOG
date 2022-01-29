@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/3d_models/mirror.glb" type="PackedScene" id=1]
+
+[node name="3DMirror" type="KinematicBody"]
+
+[node name="mirror" parent="." instance=ExtResource( 1 )]

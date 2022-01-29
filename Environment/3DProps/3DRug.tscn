@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/3d_models/rug.glb" type="PackedScene" id=1]
+
+[node name="3DRug" type="StaticBody"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="rug" parent="." instance=ExtResource( 1 )]

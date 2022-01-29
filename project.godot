@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="ShadowTheHedgehog"
-run/main_scene="res://Levels/2DLevel.tscn"
+run/main_scene="res://Levels/3DLevel1.tscn"
 config/icon="res://icon.png"
 
 [display]

@@ -1,7 +1,7 @@
 extends KinematicBody
 
 export var move_speed := 7.0
-export var jump_impulse := 20.0
+export var jump_impulse := 11.0
 export var gravity := 50.0
 export var height := 1.5
 
