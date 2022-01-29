@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Levels/3DLevel1.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Levels/Transitions/Fade.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/SceneManager.gd" type="Script" id=3]
 
 [node name="SceneManager" type="Node"]
@@ -10,7 +9,7 @@ script = ExtResource( 3 )
 [node name="CurrentScene" type="Node" parent="."]
 
 [node name="3DLevel1" parent="CurrentScene" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00346279, 0.00520074, -0.00477028 )
 
-[node name="FadeTransition" parent="." instance=ExtResource( 2 )]
-
-[connection signal="transitioned" from="FadeTransition" to="." method="_on_FadeTransition_transitioned"]
+[connection signal="ready" from="." to="." method="_on_SceneManager_ready"]
+[connection signal="script_changed" from="." to="." method="_on_SceneManager_script_changed"]
