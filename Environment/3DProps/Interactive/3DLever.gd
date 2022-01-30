@@ -5,6 +5,8 @@ extends KinematicBody
 # var a = 2
 # var b = "text"
 
+export var lever_angle := 30.0
+
 signal lever_turned()
 var is_active := false
 onready var handle = $Handle
@@ -17,9 +19,11 @@ func interact():
 	print("Interacting with lever!")
 	Globals.toggleLeverState(self)
 	
-	#if is_active:
-		#handle.transform.rotated()
-	
+	var deg_to_radians = (lever_angle * 2) * PI / 180
+	if is_active:
+		handle.rotate_object_local(Vector3(1, 0, 0), deg_to_radians)
+	else:
+		handle.rotate_object_local(Vector3(1, 0, 0), -deg_to_radians)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

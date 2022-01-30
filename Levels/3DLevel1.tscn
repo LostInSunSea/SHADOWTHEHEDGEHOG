@@ -115,4 +115,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.33657, 4, -5.08277 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.33657, 0, 2.91723 )
 
 [node name="3DLever" parent="Props" instance=ExtResource( 10 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8.69511, 2.39691, 9.99476 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.69511, 2.39691, 9.9327 )
