@@ -23,4 +23,5 @@ func addItemToInventory(var item):
 
 func toggleLeverState(var lever):
 	LeverState[lever.name] = !LeverState[lever.name]
+	print(LeverState)
 	print(LeverState[lever.name])
