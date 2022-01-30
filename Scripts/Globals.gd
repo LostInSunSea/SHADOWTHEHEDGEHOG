@@ -13,10 +13,14 @@ var PlayerState = {
 }
 var LeverMap = {
 	"L1Lever1": {
-		"2DProp": "",
 		"3DProp": "/root/SceneManager/CurrentScene/3DLevel1/Props/L1Box1"
 	}
 }
+
+var LeverMap2D = {
+	"Couch": "L1Lever1"
+}
+
 var SWAP3D = false
 
 # Called when the node enters the scene tree for the first time.
