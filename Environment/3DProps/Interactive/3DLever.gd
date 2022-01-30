@@ -8,30 +8,36 @@ extends KinematicBody
 export var lever_angle := 30.0
 
 var target_prop
+var update_lever_flag = false
+var rotated = false
 onready var handle = $Handle
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Globals.LeverState[self.name] = false
-	update_lever_rotation()
+	update_lever_flag = true
+
+func _process(delta):
+	if update_lever_flag:
+		update_lever_flag = false
+		update_lever(true)
 
 func interact():
-	print("Interacting with lever!")
-	Globals.toggleLeverState(self)
+	print("Interacting with lever - ", self.name)
+	Globals.toggleLeverState(self.name)
 	update_lever()
 
 func update_lever_rotation():
 	var deg_to_radians = (lever_angle * 2) * PI / 180
 	if Globals.LeverState[self.name]:
-		handle.rotate_object_local(Vector3(1, 0, 0), -deg_to_radians)
+		handle.rotation_degrees.x = lever_angle
 	else:
-		handle.rotate_object_local(Vector3(1, 0, 0), deg_to_radians)
+		handle.rotation_degrees.x = -lever_angle
 
-func update_lever():
+func update_lever(skip_animation = false):
 	update_lever_rotation()
 	# Update target prop location
 	print("self: ", self.name)
-	var target_prop_name = Globals.LeverMap[self.name]["3DProp"]
+	var target_prop_name = Globals.LeverMap[self.name]
 	print("target prop name - ", target_prop_name)
 	for i in get_node("/root/SceneManager/CurrentScene/").get_children():
 		print("child")
@@ -39,4 +45,4 @@ func update_lever():
 	target_prop = get_node(target_prop_name)
 	print(target_prop)
 	if target_prop:
-		target_prop.set_state(Globals.LeverState[self.name]);
+		target_prop.set_state(self.name, skip_animation);
