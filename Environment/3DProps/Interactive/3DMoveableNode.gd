@@ -8,13 +8,14 @@ export var start_position := Vector3()
 export var end_position := Vector3()
 export var duration_sec := 3.0
 
-onready var tween := get_node("Tween")
+onready var tween: Tween = get_node("Tween")
 var _start_time := OS.get_ticks_msec()
 var _start_position := transform.origin
 var _current_state := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("my path: ", self.get_path())
 	pass # Replace with function body.
 
 func set_state(state):
@@ -22,11 +23,11 @@ func set_state(state):
 	_current_state = state
 	print("setting state ", state)
 	if _current_state:
-		tween.interpolate_property(self, "position", start_position, end_position, 
+		tween.interpolate_property(self, "transform:origin", start_position, end_position, 
 		duration_sec, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		tween.start()
 	else:
-		tween.interpolate_property(self, "position", end_position, start_position, 
+		tween.interpolate_property(self, "transform:origin", end_position, start_position, 
 		duration_sec, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		tween.start()
 

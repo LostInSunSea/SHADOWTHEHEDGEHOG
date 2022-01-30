@@ -14,7 +14,7 @@ var PlayerState = {
 var LeverMap = {
 	"L1Lever1": {
 		"2DProp": "",
-		"3DProp": "L1Box1"
+		"3DProp": "/root/SceneManager/CurrentScene/3DLevel1/Props/L1Box1"
 	}
 }
 var SWAP3D = false
