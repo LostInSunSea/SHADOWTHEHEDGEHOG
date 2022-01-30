@@ -7,6 +7,8 @@ var Player3d
 #Inventory is a dictionary with a reference to other objects
 var Items = {}
 var LeverState = {}
+var SWAP3D = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

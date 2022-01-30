@@ -27,7 +27,8 @@ func interact():
 			# emit_signal("interact", other)
 		elif other.is_in_group("2DGameConsole"):
 			var node = other.get_parent()
-			emit_signal("swap_scene")
+			print("test_cast")
+			Globals.SWAP3D = true
 
 func _check_raycast():
 	if _interact_raycast:
