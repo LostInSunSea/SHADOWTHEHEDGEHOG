@@ -17,10 +17,8 @@ func interact():
 	print("Interacting with lever!")
 	is_active = not is_active
 	
-	if is_active:
-		handle.transform.rotated()
-	else:
-		
+	#if is_active:
+		#handle.transform.rotated()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

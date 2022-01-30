@@ -38,8 +38,6 @@ func _process(delta):
 	_spring_arm.translation.y += height # Raise to the height of the player's eyes
 	
 	var other = _interact_raycast.get_collider()
-	if _check_raycast():
-		
 	
 	if Input.is_action_just_pressed("exit"):
 		get_tree().quit()
