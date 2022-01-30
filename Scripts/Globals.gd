@@ -20,8 +20,5 @@ func addItemToInventory(var item):
 	Items[item.name]=1
 
 func toggleLeverState(var lever):
-	if(lever.name in LeverState):
-		LeverState[lever.name] = !LeverState[lever.name]
-	else:
-		LeverState[lever.name] = true
+	LeverState[lever.name] = !LeverState[lever.name]
 	print(LeverState[lever.name])
