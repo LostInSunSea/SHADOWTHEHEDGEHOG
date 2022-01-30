@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://PlayerController/3D Player/3DPlayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Environment/3DRooms/3DWoodFloor.tscn" type="PackedScene" id=2]
@@ -7,12 +7,9 @@
 [ext_resource path="res://Environment/3DProps/3DBox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Environment/3DProps/3DCouch.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Environment/3DProps/3DRug.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Environment/3DProps/3DCRT.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Environment/3DProps/Interactive/2DGameConsole.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Environment/3DProps/3DShelf.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Environment/3DProps/Interactive/3DLever.tscn" type="PackedScene" id=10]
-
-[sub_resource type="BoxShape" id=1]
-extents = Vector3( 1.97906, 1, 1.97494 )
 
 [node name="Spatial" type="Spatial"]
 
@@ -98,15 +95,8 @@ transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.60947, 0, 1.87055 )
 [node name="3DCouch" parent="Props" instance=ExtResource( 6 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.88318, 9.53674e-07, 8.60519 )
 
-[node name="3DTable2" parent="Props" instance=ExtResource( 3 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.9128, 0, 4.78828 )
-
-[node name="3DCRT" parent="Props/3DTable2" instance=ExtResource( 8 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.148031, 1, 0 )
-
-[node name="CollisionShape2" type="CollisionShape" parent="Props/3DTable2"]
-transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, 0.149, 1, 0 )
-shape = SubResource( 1 )
+[node name="2DGameConsole" parent="Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.91643, 0, 4.79725 )
 
 [node name="3DShelf" parent="Props" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.33657, 4, -5.08277 )

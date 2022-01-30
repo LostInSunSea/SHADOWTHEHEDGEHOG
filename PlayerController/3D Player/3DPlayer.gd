@@ -1,6 +1,7 @@
 extends KinematicBody
 
 signal interact()
+signal swap_scene()
 
 export var move_speed := 7.0
 export var jump_impulse := 11.0
@@ -20,9 +21,13 @@ func _ready():
 
 func interact():
 	var other = _interact_raycast.get_collider()
-	if _check_raycast() and other.is_in_group("Interactive"):
-		other.interact()
-		# emit_signal("interact", other)
+	if _check_raycast():
+		if other.is_in_group("Interactive"):
+			other.interact()
+			# emit_signal("interact", other)
+		elif other.is_in_group("2DGameConsole"):
+			var node = other.get_parent()
+			emit_signal("swap_scene")
 
 func _check_raycast():
 	if _interact_raycast:
