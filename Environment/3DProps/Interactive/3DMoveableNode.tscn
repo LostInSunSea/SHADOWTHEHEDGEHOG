@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Environment/3DProps/Interactive/3DMoveableNode.gd" type="Script" id=1]
+
+[node name="3DMoveableNode" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Tween" type="Tween" parent="."]

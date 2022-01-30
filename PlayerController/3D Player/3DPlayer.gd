@@ -17,6 +17,12 @@ onready var _interact_raycast: RayCast = get_node("CameraArm/Camera/InteractRayc
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var player_transform = Globals.PlayerState["transform"]
+	if player_transform:
+		transform = player_transform
+	var spring_arm_transform = Globals.PlayerState["spring_arm_transform"]
+	if spring_arm_transform:
+		_spring_arm.transform = spring_arm_transform
 	pass # Replace with function body.
 
 func interact():
@@ -29,6 +35,8 @@ func interact():
 			var node = other.get_parent()
 			print("test_cast")
 			Globals.SWAP3D = true
+			Globals.PlayerState["transform"] = transform
+			Globals.PlayerState["spring_arm_transform"] = _spring_arm.transform
 
 func _check_raycast():
 	if _interact_raycast:

@@ -7,6 +7,16 @@ var Player3d
 #Inventory is a dictionary with a reference to other objects
 var Items = {}
 var LeverState = {}
+var PlayerState = {
+	"transform": null,
+	"spring_arm_transform": null
+}
+var LeverMap = {
+	"L1Lever1": {
+		"2DProp": "",
+		"3DProp": "L1Box1"
+	}
+}
 var SWAP3D = false
 
 # Called when the node enters the scene tree for the first time.
