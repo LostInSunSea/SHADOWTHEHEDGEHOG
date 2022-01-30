@@ -1,7 +1,8 @@
 extends Node
 
 const World2D = preload("res://Levels/2DLevel1.tscn")
-const World3D = preload("res://Levels/3DLevel1.tscn")
+const World1_3D = preload("res://Levels/3DLevel1.tscn")
+const World2_3D = preload("res://Levels/3DLevel2.tscn")
 const Transition = preload("res://Levels/Transitions/Fade.tscn")
 var temp
 var is3D = true
@@ -31,7 +32,7 @@ func _on_FadeTransition_transitioned():
 		$CurrentScene.add_child(World2D.instance())
 		is3D = false
 	else:
-		$CurrentScene.add_child(World3D.instance())
+		$CurrentScene.add_child(World1_3D.instance())
 		is3D = true
 	temp.disconnect("transitioned", self, "_on_FadeTransition_transitioned")
 	temp.queue_free()
