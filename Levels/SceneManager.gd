@@ -15,7 +15,7 @@ func _process(delta):
 		swap_scene()
 		Globals.SWAP3D = false
 		pass
-	if Input.is_action_just_pressed("Transition"):
+	if Input.is_action_just_pressed("Transition") && is3D == false:
 		swap_scene()
 
 func swap_scene():
