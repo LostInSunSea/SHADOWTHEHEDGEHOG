@@ -14,6 +14,9 @@ var PlayerState = {
 var LeverMap = {
 	"L1Lever1": {
 		"3DProp": "/root/SceneManager/CurrentScene/3DLevel1/Props/L1Box1"
+	},
+	"L1Lever2": {
+		"3DProp": "/root/SceneManager/CurrentScene/3DLevel1/Props/L1Box2"
 	}
 }
 
