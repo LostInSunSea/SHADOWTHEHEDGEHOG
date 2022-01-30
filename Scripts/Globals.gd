@@ -21,7 +21,8 @@ var LeverMap = {
 }
 
 var LeverMap2D = {
-	"Couch": "L1Lever1"
+	"L1SBox": "L1Lever1",
+	"L1LBox": "L1Lever2"
 }
 
 var SWAP3D = false

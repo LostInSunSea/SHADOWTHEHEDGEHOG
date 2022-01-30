@@ -13,7 +13,7 @@
 [ext_resource path="res://Environment/3DProps/Interactive/3DGrate.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Environment/3DProps/Interactive/3DMoveableNode.tscn" type="PackedScene" id=12]
 
-[node name="Spatial" type="Spatial"]
+[node name="3DLevel1" type="Spatial"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6, 0, 5.929 )

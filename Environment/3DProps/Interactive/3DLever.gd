@@ -33,6 +33,9 @@ func update_lever():
 	print("self: ", self.name)
 	var target_prop_name = Globals.LeverMap[self.name]["3DProp"]
 	print("target prop name - ", target_prop_name)
+	for i in get_node("/root/SceneManager/CurrentScene/").get_children():
+		print("child")
+		print(i)
 	target_prop = get_node(target_prop_name)
 	print(target_prop)
 	if target_prop:

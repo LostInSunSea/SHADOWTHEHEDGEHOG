@@ -26,16 +26,12 @@ func swap_scene():
 	temp.transition()
 
 func _on_FadeTransition_transitioned():
-	print("hello")
 	$CurrentScene.get_child(0).queue_free()
-	print("test", is3D)
 	if(is3D):
 		$CurrentScene.add_child(World2D.instance())
 		is3D = false
 	else:
 		$CurrentScene.add_child(World3D.instance())
 		is3D = true
-	print($CurrentScene.get_children())
 	temp.disconnect("transitioned", self, "_on_FadeTransition_transitioned")
 	temp.queue_free()
-	print("Swapped Scene")
