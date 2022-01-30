@@ -3,7 +3,7 @@ extends KinematicBody2D
 
 # Declare member variables here. Examples:
 export var move_speed := 450
-export var jump_speed := 750
+export var jump_speed := 850
 export var gravity := 2000
 
 var velocity = Vector2.ZERO	
