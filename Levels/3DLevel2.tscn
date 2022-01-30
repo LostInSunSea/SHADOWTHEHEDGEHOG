@@ -1,0 +1,145 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Environment/3DRooms/3DWall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Environment/3DRooms/3DWoodFloor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Environment/3DProps/3DCouch.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Environment/3DProps/Interactive/3DGrate.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Environment/3DProps/Interactive/3DMoveableNode.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Environment/3DProps/3DRug.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Environment/3DProps/3DBox.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Environment/3DProps/Interactive/2DGameConsole.tscn" type="PackedScene" id=8]
+[ext_resource path="res://PlayerController/3D Player/3DPlayer.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Environment/3DProps/3DShelf.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Environment/3DProps/3DTable.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Environment/3DProps/Interactive/3DLever.tscn" type="PackedScene" id=12]
+
+[node name="3DLevel2" type="Spatial"]
+
+[node name="Player" parent="." instance=ExtResource( 9 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6, 0, 5.929 )
+
+[node name="Wall" type="Spatial" parent="."]
+
+[node name="South" type="Spatial" parent="Wall"]
+
+[node name="3DWall" parent="Wall/South" instance=ExtResource( 1 )]
+transform = Transform( 0.667, 0, 0, 0, 0.667, 0, 0, 0, 0.667, 0, 0, -5 )
+
+[node name="3DWall2" parent="Wall/South" instance=ExtResource( 1 )]
+transform = Transform( 0.667, 0, 0, 0, 0.667, 0, 0, 0, 0.667, 10, 0, -5 )
+
+[node name="3DWall3" parent="Wall/South" instance=ExtResource( 1 )]
+transform = Transform( 0.667, 0, 0, 0, 0.667, 0, 0, 0, 0.667, 20, 0, -5 )
+
+[node name="North" type="Spatial" parent="Wall"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20, 0, 5 )
+
+[node name="3DWall" parent="Wall/North" instance=ExtResource( 1 )]
+transform = Transform( 0.667, 0, 0, 0, 0.667, 0, 0, 0, 0.667, 0, 0, -5 )
+
+[node name="3DWall2" parent="Wall/North" instance=ExtResource( 1 )]
+transform = Transform( 0.667, 0, 0, 0, 0.667, 0, 0, 0, 0.667, 10, 0, -5 )
+
+[node name="3DWall3" parent="Wall/North" instance=ExtResource( 1 )]
+transform = Transform( 0.667, 0, 0, 0, 0.667, 0, 0, 0, 0.667, 20, 0, -5 )
+
+[node name="West" type="Spatial" parent="Wall"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10, 0, 0 )
+
+[node name="3DWall" parent="Wall/West" instance=ExtResource( 1 )]
+transform = Transform( 0.667, 0, 0, 0, 0.667, 0, 0, 0, 0.667, -1.07346e-07, 0, -7.45578 )
+
+[node name="3DWall2" parent="Wall/West" instance=ExtResource( 1 )]
+transform = Transform( 0.667, 0, 0, 0, 0.667, 0, 0, 0, 0.667, 10, 0, -7.45578 )
+
+[node name="East" type="Spatial" parent="Wall"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 10 )
+
+[node name="3DWall" parent="Wall/East" instance=ExtResource( 1 )]
+transform = Transform( 0.667, 0, 0, 0, 0.667, 0, 0, 0, 0.667, 0, 0, -5 )
+
+[node name="3DWall2" parent="Wall/East" instance=ExtResource( 1 )]
+transform = Transform( 0.667, 0, 0, 0, 0.667, 0, 0, 0, 0.667, 10, 0, -5 )
+
+[node name="Floor" type="Spatial" parent="."]
+
+[node name="3DWoodFloor" parent="Floor" instance=ExtResource( 2 )]
+
+[node name="3DWoodFloor2" parent="Floor" instance=ExtResource( 2 )]
+transform = Transform( 5, 0, 0, 0, 0.5, 0, 0, 0, 5, 10, 0, 0 )
+
+[node name="3DWoodFloor3" parent="Floor" instance=ExtResource( 2 )]
+transform = Transform( 5, 0, 0, 0, 0.5, 0, 0, 0, 5, 0, 0, 10 )
+
+[node name="3DWoodFloor4" parent="Floor" instance=ExtResource( 2 )]
+transform = Transform( 5, 0, 0, 0, 0.5, 0, 0, 0, 5, 10, 0, 10 )
+
+[node name="3DWoodFloor5" parent="Floor" instance=ExtResource( 2 )]
+transform = Transform( 5, 0, 0, 0, 0.5, 0, 0, 0, 5, 20, 0, 10 )
+
+[node name="3DWoodFloor6" parent="Floor" instance=ExtResource( 2 )]
+transform = Transform( 5, 0, 0, 0, 0.5, 0, 0, 0, 5, 20, 0, 0 )
+
+[node name="Props" type="Spatial" parent="."]
+
+[node name="3DTable" parent="Props" instance=ExtResource( 11 )]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2, 0, 2 )
+
+[node name="3DCouch" parent="Props" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -4, 0, 2 )
+
+[node name="2DGameConsole" parent="Props" instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 0, 9.061 )
+
+[node name="3DGrate" parent="Props/2DGameConsole" groups=["Interactive"] instance=ExtResource( 4 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 10.061, 4, -11.0056 )
+
+[node name="3DShelf" parent="Props" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.3366, 4, 4.91723 )
+
+[node name="3DRug" parent="Props" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 1.917 )
+
+[node name="L1Lever1" parent="Props" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 1.788, 10 )
+
+[node name="L1Lever2" parent="Props" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.788, 10 )
+
+[node name="3DShelf2" parent="Props" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 4, -1 )
+
+[node name="L1Box2" parent="Props" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 6 )
+start_position = Vector3( -1, 0, 6 )
+end_position = Vector3( -1, -1.75, 6 )
+
+[node name="3DBox2" parent="Props/L1Box2" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1.75, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="L1Box1" parent="Props" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -1 )
+start_position = Vector3( 9, 0, -1 )
+end_position = Vector3( 2, 0, -1 )
+
+[node name="3DBox" parent="Props/L1Box1" instance=ExtResource( 7 )]
+
+[node name="Ceiling" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0 )
+
+[node name="3DWoodFloor" parent="Ceiling" instance=ExtResource( 2 )]
+
+[node name="3DWoodFloor2" parent="Ceiling" instance=ExtResource( 2 )]
+transform = Transform( 5, 0, 0, 0, 0.5, 0, 0, 0, 5, 10, 0, 0 )
+
+[node name="3DWoodFloor3" parent="Ceiling" instance=ExtResource( 2 )]
+transform = Transform( 5, 0, 0, 0, 0.5, 0, 0, 0, 5, 0, 0, 10 )
+
+[node name="3DWoodFloor4" parent="Ceiling" instance=ExtResource( 2 )]
+transform = Transform( 5, 0, 0, 0, 0.5, 0, 0, 0, 5, 10, 0, 10 )
+
+[node name="3DWoodFloor5" parent="Ceiling" instance=ExtResource( 2 )]
+transform = Transform( 5, 0, 0, 0, 0.5, 0, 0, 0, 5, 20, 0, 10 )
+
+[node name="3DWoodFloor6" parent="Ceiling" instance=ExtResource( 2 )]
+transform = Transform( 5, 0, 0, 0, 0.5, 0, 0, 0, 5, 20, 0, 0 )

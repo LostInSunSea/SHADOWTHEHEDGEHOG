@@ -3,7 +3,8 @@ extends Node
 const World2D = preload("res://Levels/2DLevel1.tscn")
 const World3D = preload("res://Levels/3DLevel1.tscn")
 const World2D2 = preload("res://Levels/2DLevel2.tscn")
-const World3D2 = preload("res://Levels/3DLevel1.tscn")
+const World3D2 = preload("res://Levels/3DLevel2.tscn")
+
 const Transition = preload("res://Levels/Transitions/Fade.tscn")
 var temp
 var is3D = true
@@ -66,3 +67,4 @@ func _on_FadeTransition_transitioned():
 			is3D = true
 	temp.disconnect("transitioned", self, "_on_FadeTransition_transitioned")
 	temp.queue_free()
+
