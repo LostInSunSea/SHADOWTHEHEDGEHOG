@@ -15,7 +15,7 @@ func _ready():
 
 func interact():
 	print("Interacting with lever!")
-	is_active = not is_active
+	Globals.toggleLeverState(self)
 	
 	#if is_active:
 		#handle.transform.rotated()

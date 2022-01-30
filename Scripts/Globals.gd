@@ -6,7 +6,7 @@ var Player2d
 var Player3d
 #Inventory is a dictionary with a reference to other objects
 var Items = {}
-
+var LeverState = {}
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -18,3 +18,10 @@ func _ready():
 
 func addItemToInventory(var item):
 	Items[item.name]=1
+
+func toggleLeverState(var lever):
+	if(lever.name in LeverState):
+		LeverState[lever.name] = !LeverState[lever.name]
+	else:
+		LeverState[lever.name] = true
+	print(LeverState[lever.name])

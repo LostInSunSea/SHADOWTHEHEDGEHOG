@@ -17,5 +17,5 @@ func _ready():
 
 func _on_Key_body_entered(body):
 	print("key touched")
-	Inventory.addItemToInventory(self)
+	Globals.addItemToInventory(self)
 	queue_free()

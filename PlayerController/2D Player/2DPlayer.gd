@@ -10,10 +10,13 @@ var velocity = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Inventory.Player2d = self
+	Globals.Player2d = self
 	
 func _process(delta):
 	animation_controller()
+	#Exit 
+	if Input.is_action_just_pressed("exit"):
+		get_tree().quit()
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,7 +33,7 @@ func _physics_process(delta):
 		if is_on_floor():
 			velocity.y = -jump_speed
 	if Input.is_action_pressed("interact"):
-		print(Inventory.Items)
+		print(Globals.Items)
 	
 	#apply gravity 
 	velocity.y += gravity * delta
