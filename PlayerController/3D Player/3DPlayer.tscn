@@ -28,7 +28,7 @@ func _input(event):
 #	pass
 "
 
-[node name="Player" type="KinematicBody"]
+[node name="Player" type="KinematicBody" groups=["Player"]]
 script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
@@ -42,7 +42,7 @@ script = ExtResource( 1 )
 [node name="Camera" type="Camera" parent="CameraArm"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
 
-[node name="3DPlacementRayCast" type="RayCast" parent="CameraArm/Camera"]
+[node name="InteractRaycast" type="RayCast" parent="CameraArm/Camera"]
 enabled = true
 cast_to = Vector3( 0, 0, -5 )
 script = SubResource( 2 )
