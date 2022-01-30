@@ -22,7 +22,7 @@ func _process(delta):
 		update_lever(true)
 
 func interact():
-	print("Interacting with lever - ", self.name)
+	#print("Interacting with lever - ", self.name)
 	Globals.toggleLeverState(self.name)
 	update_lever()
 
@@ -36,12 +36,9 @@ func update_lever_rotation():
 func update_lever(skip_animation = false):
 	update_lever_rotation()
 	# Update target prop location
-	print("self: ", self.name)
+	#print("self: ", self.name)
 	var target_prop_name = Globals.LeverMap[self.name]
-	print("target prop name - ", target_prop_name)
-	for i in get_node("/root/SceneManager/CurrentScene/").get_children():
-		print("child")
-		print(i)
+	#print("target prop name - ", target_prop_name)
 	target_prop = get_node(target_prop_name)
 	print(target_prop)
 	if target_prop:

@@ -27,6 +27,7 @@ func _process(delta):
 	pass
 
 func _on_Arrow_body_entered(body):
-	print("inside")
+	print("inside-------------------------------------------------------------------------------->")
+	Globals.ARROWTRIGGER = true
 	pass # Replace with function body.
 

@@ -15,13 +15,13 @@ var _current_state := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("my path: ", self.get_path())
+	#print("my path: ", self.get_path())
 	pass # Replace with function body.
 
 func set_state(lever_name, skip_animation = false):
 	_start_time = OS.get_ticks_msec()
 	_current_state = Globals.LeverState[lever_name]
-	print("setting state ", lever_name)
+	#print("setting state ", lever_name)
 	if _current_state and not skip_animation:
 		tween.interpolate_property(self, "transform:origin", start_position, end_position, 
 		duration_sec, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
