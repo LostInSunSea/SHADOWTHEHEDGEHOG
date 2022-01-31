@@ -46,10 +46,9 @@ func swap_scene():
 	temp.transition()
 
 func _on_FadeTransition_transitioned():
-	$CurrentScene.get_child(0).queue_free()
+	#$CurrentScene.get_child(0).queue_free()
 	for i in $CurrentScene.get_children():
 		print("test222222222--------------")
-		print(i)
 		i.queue_free()
 	print("Trigger", Globals.ARROWTRIGGER)
 	if DOOR:
