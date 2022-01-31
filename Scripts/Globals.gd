@@ -5,7 +5,10 @@ extends Node
 var Player2d
 var Player3d
 #Inventory is a dictionary with a reference to other objects
-var Items = {}
+var Items = {
+	"Level2Key": false,
+	"WinKey": false
+}
 var LeverState = {
 	"L1Lever1": false,
 	"L1Lever2": false

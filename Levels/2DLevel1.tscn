@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/tiles/basictilesheet.png" type="Texture" id=1]
 [ext_resource path="res://PlayerController/2D Player/2DPlayer.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Environment/2DProps/Table.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Environment/2DProps/Arrow.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Environment/2DProps/FloorLamp.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Environment/2DProps/Key.tscn" type="PackedScene" id=11]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -180,3 +181,6 @@ __meta__ = {
 [node name="Arrow" parent="." instance=ExtResource( 9 )]
 position = Vector2( 389, 502 )
 scale = Vector2( 0.36, 0.36 )
+
+[node name="WinKey" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1520, 441 )

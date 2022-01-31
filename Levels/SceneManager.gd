@@ -11,6 +11,7 @@ var temp
 var is3D = true
 var isLVL2 = false
 var ARROW = false
+var DOOR = false
 
 func _ready():
 	pass
@@ -24,6 +25,11 @@ func _process(delta):
 	if Input.is_action_just_pressed("Transition") && is3D == false:
 		swap_scene()
 		pass
+	if Globals.DOOR_INTERACTED:
+		print("door interacted")
+		DOOR = true
+		swap_scene()		
+		Globals.DOOR_INTERACTED = false
 	if Globals.ARROWTRIGGER:
 		print("scenemanager arrow -----------------------<")
 		ARROW = true
@@ -42,8 +48,7 @@ func swap_scene():
 func _on_FadeTransition_transitioned():
 	$CurrentScene.get_child(0).queue_free()
 	print("Trigger", Globals.ARROWTRIGGER)
-	if Globals.DOOR_INTERACTED:
-		Globals.DOOR_INTERACTED = false
+	if DOOR:
 		print("transitioning to ", Globals.LEVEL_TO_LOAD)
 		if Globals.LEVEL_TO_LOAD == "3DLevel1":
 			$CurrentScene.add_child(World3D.instance())
@@ -51,8 +56,7 @@ func _on_FadeTransition_transitioned():
 			$CurrentScene.add_child(World3D2.instance())
 		elif Globals.LEVEL_TO_LOAD == "WinLevel":
 			$CurrentScene.add_child(WinLevel.instance())
-		temp.disconnect("transitioned", self, "_on_FadeTransition_transitioned")
-		temp.queue_free()
+		DOOR = false
 	elif ARROW: 
 		print("arrows")
 		if(isLVL2):

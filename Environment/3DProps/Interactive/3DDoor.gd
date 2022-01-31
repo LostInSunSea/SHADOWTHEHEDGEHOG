@@ -6,7 +6,7 @@ extends StaticBody
 # var b = "text"
 
 export var level_to_load := "3DLevel1"
-export var lock_name := "3DLevel1"
+export var key_name := "Level2Key"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,8 +14,11 @@ func _ready():
 
 func interact():
 	print("interacting with door")
-	Globals.LEVEL_TO_LOAD = level_to_load
-	Globals.DOOR_INTERACTED = true
+	if Globals.Items[key_name]:
+		Globals.LEVEL_TO_LOAD = level_to_load
+		Globals.DOOR_INTERACTED = true
+	else:
+		print("cant open door, it's locked")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
