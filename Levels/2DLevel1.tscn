@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/tiles/basictilesheet.png" type="Texture" id=1]
 [ext_resource path="res://PlayerController/2D Player/2DPlayer.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Environment/2DProps/SmallBox.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Environment/2DProps/Table.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Environment/2DProps/Arrow.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Environment/2DProps/FloorLamp.tscn" type="PackedScene" id=10]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -115,10 +116,14 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 [node name="2DLevel1" type="Node2D"]
 script = SubResource( 1 )
 
+[node name="FloorLamp" parent="." instance=ExtResource( 10 )]
+position = Vector2( 730, 818 )
+rotation = 3.14159
+scale = Vector2( 0.36, -0.36 )
+
 [node name="Shelf" parent="." instance=ExtResource( 3 )]
 position = Vector2( 400, 632 )
-scale = Vector2( 0.5, 0.5 )
-flip = true
+scale = Vector2( -0.5, 0.5 )
 
 [node name="Shelf2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1528, 624 )
@@ -163,4 +168,5 @@ __meta__ = {
 }
 
 [node name="Arrow" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1096, 640 )
+position = Vector2( 1524, 512 )
+scale = Vector2( -0.36, 0.36 )
