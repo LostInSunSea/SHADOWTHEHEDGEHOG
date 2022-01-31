@@ -18,6 +18,8 @@
 ambient_light_color = Color( 0.117647, 0.0784314, 0.0980392, 1 )
 ambient_light_sky_contribution = 0.0
 ssao_enabled = true
+ssao_radius2 = 1.0
+ssao_light_affect = 1.0
 
 [node name="3DLevel1" type="Spatial"]
 
@@ -89,7 +91,7 @@ transform = Transform( 5, 0, 0, 0, 0.5, 0, 0, 0, 5, 20, 0, 0 )
 [node name="Props" type="Spatial" parent="."]
 
 [node name="3DGrate" parent="Props" groups=["Interactive"] instance=ExtResource( 11 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.8144, 4.62955, 4.12647 )
+transform = Transform( -8.74228e-08, 0, -3, 0, 2, 0, 2, 0, -1.31134e-07, -5.20028, 4.24226, -0.603607 )
 
 [node name="3DTable" parent="Props" instance=ExtResource( 3 )]
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2, 0, 2 )
