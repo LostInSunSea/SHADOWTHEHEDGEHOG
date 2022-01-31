@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Environment/3DRooms/3DWall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Environment/3DRooms/3DWoodFloor.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Environment/3DProps/3DShelf.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Environment/3DProps/3DTable.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Environment/3DProps/Interactive/3DLever.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Environment/3DProps/Interactive/3DDoor.tscn" type="PackedScene" id=13]
 
 [node name="3DLevel2" type="Spatial"]
 
@@ -95,22 +96,28 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 0, 9
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 10.061, 4, -11.0056 )
 
 [node name="3DShelf" parent="Props" instance=ExtResource( 10 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.3366, 4, 4.91723 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.3366, 5, 5.91723 )
 
 [node name="3DRug" parent="Props" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 1.917 )
 
 [node name="L1Lever1" parent="Props" instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 1.788, 10 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9638, 1.788, 10 )
 
 [node name="L1Lever2" parent="Props" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.46379, 1.788, 10 )
+
+[node name="L1Lever3" parent="Props" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.788, 10 )
+
+[node name="L1Lever4" parent="Props" instance=ExtResource( 12 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11, 5.788, -5 )
 
 [node name="3DShelf2" parent="Props" instance=ExtResource( 10 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 4, -1 )
 
 [node name="L1Box2" parent="Props" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 6 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -3 )
 start_position = Vector3( -1, 0, 6 )
 end_position = Vector3( -1, -1.75, 6 )
 
@@ -123,6 +130,9 @@ start_position = Vector3( 9, 0, -1 )
 end_position = Vector3( 2, 0, -1 )
 
 [node name="3DBox" parent="Props/L1Box1" instance=ExtResource( 7 )]
+
+[node name="3DDoor" parent="Props" instance=ExtResource( 13 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.5634, 0, -0.685043 )
 
 [node name="Ceiling" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0 )

@@ -7,7 +7,7 @@ export var move_speed := 7.0
 export var jump_impulse := 11.0
 export var gravity := 50.0
 export var height := 1.5
-export var interact_distance := 4.0
+export var interact_distance := 3.0
 
 var velocity := Vector3.ZERO
 var snap_vector := Vector3.DOWN

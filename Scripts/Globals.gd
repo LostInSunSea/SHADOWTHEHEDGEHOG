@@ -25,6 +25,8 @@ var LeverMap2D = {
 
 var SWAP3D = false
 var ARROWTRIGGER = false
+var DOOR_INTERACTED = false
+var LEVEL_TO_LOAD = "3DLevel1"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

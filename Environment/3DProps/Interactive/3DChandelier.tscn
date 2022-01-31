@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/3d_models/chandelier.glb" type="PackedScene" id=1]
+
+[node name="3DChandelier" type="StaticBody"]
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+
+[node name="chandelier" parent="." instance=ExtResource( 1 )]

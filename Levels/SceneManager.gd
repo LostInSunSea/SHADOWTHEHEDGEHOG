@@ -4,6 +4,7 @@ const World2D = preload("res://Levels/2DLevel1.tscn")
 const World3D = preload("res://Levels/3DLevel1.tscn")
 const World2D2 = preload("res://Levels/2DLevel2.tscn")
 const World3D2 = preload("res://Levels/3DLevel2.tscn")
+const WinLevel = preload("res://Levels/WinLevel.tscn")
 
 const Transition = preload("res://Levels/Transitions/Fade.tscn")
 var temp
@@ -41,7 +42,18 @@ func swap_scene():
 func _on_FadeTransition_transitioned():
 	$CurrentScene.get_child(0).queue_free()
 	print("Trigger", Globals.ARROWTRIGGER)
-	if ARROW: 
+	if Globals.DOOR_INTERACTED:
+		Globals.DOOR_INTERACTED = false
+		print("transitioning to ", Globals.LEVEL_TO_LOAD)
+		if Globals.LEVEL_TO_LOAD == "3DLevel1":
+			$CurrentScene.add_child(World3D.instance())
+		elif Globals.LEVEL_TO_LOAD == "3DLevel2":
+			$CurrentScene.add_child(World3D2.instance())
+		elif Globals.LEVEL_TO_LOAD == "WinLevel":
+			$CurrentScene.add_child(WinLevel.instance())
+		temp.disconnect("transitioned", self, "_on_FadeTransition_transitioned")
+		temp.queue_free()
+	elif ARROW: 
 		print("arrows")
 		if(isLVL2):
 			print("test1")
