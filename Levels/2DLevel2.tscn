@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/tiles/basictilesheet.png" type="Texture" id=1]
 [ext_resource path="res://PlayerController/2D Player/2DPlayer.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Environment/2DProps/LargeBox.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Environment/2DProps/Arrow.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Environment/2DProps/Couch.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Environment/2DProps/Key.tscn" type="PackedScene" id=11]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -131,8 +132,17 @@ position = Vector2( 400, 608 )
 scale = Vector2( -0.5, 0.5 )
 
 [node name="Shelf2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1528, 600 )
+position = Vector2( 1522, 525 )
 scale = Vector2( 0.5, 0.5 )
+
+[node name="L2SBox" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1175, 812 )
+increment = Vector2( -400, 0 )
+
+[node name="L2LBox" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1348, 884 )
+scale = Vector2( 0.5, 0.5 )
+increment = Vector2( 0, -120 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 3 )
@@ -144,17 +154,8 @@ position = Vector2( 394, 489 )
 scale = Vector2( 0.36, 0.36 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 557, 487 )
+position = Vector2( 500, 748 )
 scale = Vector2( 0.5, 0.5 )
-
-[node name="L2LBox" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1348, 764 )
-scale = Vector2( 0.5, 0.5 )
-increment = Vector2( 0, 120 )
-
-[node name="L2SBox" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1175, 806 )
-increment = Vector2( -400, 0 )
 
 [node name="FloorLamp" parent="." instance=ExtResource( 5 )]
 position = Vector2( 434, 787 )
@@ -178,3 +179,7 @@ scale = Vector2( 0.5, 0.5 )
 [node name="Table" parent="Couch" instance=ExtResource( 6 )]
 position = Vector2( 230, 48 )
 scale = Vector2( 0.35, 1 )
+
+[node name="WinKey" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1512, 367 )
+scale = Vector2( 10, 10 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Environment/3DRooms/3DWall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Environment/3DRooms/3DWoodFloor.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Environment/3DProps/Interactive/3DLever.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Environment/3DProps/Interactive/3DDoor.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Environment/3DProps/Lamp.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Environment/3DProps/Interactive/3DKey.tscn" type="PackedScene" id=15]
 
 [sub_resource type="Environment" id=1]
 ambient_light_color = Color( 0.0666667, 0.0980392, 0.0666667, 1 )
@@ -89,6 +90,9 @@ transform = Transform( 5, 0, 0, 0, 0.5, 0, 0, 0, 5, 20, 0, 0 )
 
 [node name="Props" type="Spatial" parent="."]
 
+[node name="3DKey" parent="Props" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.241, 4.83172, 5.49126 )
+
 [node name="3DTable" parent="Props" instance=ExtResource( 11 )]
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2, 0, 2 )
 
@@ -102,30 +106,24 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 0, 9
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 10.061, 4, -11.0056 )
 
 [node name="3DShelf" parent="Props" instance=ExtResource( 10 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.3366, 5, 5.88868 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.3366, 5.28786, 5.88868 )
 
 [node name="3DRug" parent="Props" instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 6, -0.0412881, 4.56578 )
 
 [node name="L2Lever1" parent="Props" instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9638, 1.788, 10 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.964, 1.788, 10 )
 
 [node name="L2Lever2" parent="Props" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.46379, 1.788, 10 )
-
-[node name="L2Lever3" parent="Props" instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.788, 10 )
-
-[node name="L2Lever4" parent="Props" instance=ExtResource( 12 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11, 5.788, -5 )
 
 [node name="3DShelf2" parent="Props" instance=ExtResource( 10 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 4, -1 )
 
 [node name="L2Box2" parent="Props" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -3 )
-start_position = Vector3( 11, 0, -3 )
-end_position = Vector3( 11, -1.75, -3 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -1.75, -3 )
+start_position = Vector3( 11, -1.75, -3 )
+end_position = Vector3( 11, 0, -3 )
 
 [node name="3DBox2" parent="Props/L2Box2" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1.75, 0, 0, 0, 1, 0, 0, 0 )

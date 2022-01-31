@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://PlayerController/3D Player/3DPlayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Environment/3DRooms/3DWoodFloor.tscn" type="PackedScene" id=2]
@@ -13,7 +13,6 @@
 [ext_resource path="res://Environment/3DProps/Interactive/3DGrate.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Environment/3DProps/Interactive/3DMoveableNode.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Environment/3DProps/Lamp.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Environment/3DProps/Interactive/3DKey.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Environment/3DProps/Interactive/3DDoor.tscn" type="PackedScene" id=15]
 
 [sub_resource type="Environment" id=1]
@@ -90,9 +89,6 @@ transform = Transform( 5, 0, 0, 0, 0.5, 0, 0, 0, 5, 20, 0, 0 )
 
 [node name="Props" type="Spatial" parent="."]
 
-[node name="WinKey" parent="Props" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23974, 0.130784, -1.73583 )
-
 [node name="3DGrate" parent="Props" groups=["Interactive"] instance=ExtResource( 11 )]
 transform = Transform( -8.74228e-08, 0, -3, 0, 2, 0, 2, 0, -1.31134e-07, -5.20028, 4.24226, -0.603607 )
 
@@ -106,7 +102,7 @@ transform = Transform( 1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -4, 0, 2 
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 0, 9.061 )
 
 [node name="3DShelf" parent="Props" instance=ExtResource( 9 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.3366, 4, 4.91723 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.3366, 4.84101, 4.91723 )
 
 [node name="3DRug" parent="Props" instance=ExtResource( 7 )]
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 6, -0.0150986, 4.6259 )
