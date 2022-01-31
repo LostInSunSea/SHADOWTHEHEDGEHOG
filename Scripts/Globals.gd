@@ -8,7 +8,11 @@ var Player3d
 var Items = {}
 var LeverState = {
 	"L1Lever1": false,
-	"L1Lever2": false
+	"L1Lever2": false,
+	"L2Lever1": false,
+	"L2Lever2": false,
+	"L2Lever3": false,
+	"L2Lever4": false,
 }
 var PlayerState = {
 	"transform": null,
@@ -16,11 +20,17 @@ var PlayerState = {
 }
 var LeverMap = {
 	"L1Lever1": "/root/SceneManager/CurrentScene/3DLevel1/Props/L1Box1",
-	"L1Lever2": "/root/SceneManager/CurrentScene/3DLevel1/Props/L1Box2"
+	"L1Lever2": "/root/SceneManager/CurrentScene/3DLevel1/Props/L1Box2",
+	"L2Lever1": "/root/SceneManager/CurrentScene/3DLevel2/Props/L2Box1",
+	"L2Lever2": "/root/SceneManager/CurrentScene/3DLevel2/Props/L2Box2",
+	"L2Lever3": "/root/SceneManager/CurrentScene/3DLevel2/Props/L1Box3",
+	"L2Lever4": "/root/SceneManager/CurrentScene/3DLevel2/Props/L1Box4",
 }
 var LeverMap2D = {
 	"L1SBox": "L1Lever1",
-	"L1LBox": "L1Lever2"
+	"L1LBox": "L1Lever2",
+	"L2SBox": "L2Lever1",
+	"L2LBox": "L2Lever2",
 }
 
 var SWAP3D = false
