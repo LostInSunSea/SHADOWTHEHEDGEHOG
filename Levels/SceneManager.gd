@@ -47,6 +47,10 @@ func swap_scene():
 
 func _on_FadeTransition_transitioned():
 	$CurrentScene.get_child(0).queue_free()
+	for i in $CurrentScene.get_children():
+		print("test222222222--------------")
+		print(i)
+		i.queue_free()
 	print("Trigger", Globals.ARROWTRIGGER)
 	if DOOR:
 		print("transitioning to ", Globals.LEVEL_TO_LOAD)
@@ -71,14 +75,18 @@ func _on_FadeTransition_transitioned():
 		print("no arrows")
 		if(is3D):
 			if(isLVL2):
+				print("test1")
 				$CurrentScene.add_child(World2D2.instance())
 			else:
+				print("test2")
 				$CurrentScene.add_child(World2D.instance())
 			is3D = false
 		else:
 			if(isLVL2):
+				print("test3")
 				$CurrentScene.add_child(World3D2.instance())
 			else:
+				print("test4")
 				$CurrentScene.add_child(World3D.instance())
 			is3D = true
 	temp.disconnect("transitioned", self, "_on_FadeTransition_transitioned")
